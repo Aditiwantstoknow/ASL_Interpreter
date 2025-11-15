@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Connect - Sign Language Interpreter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="hand-icon">✋</span>
+                <h1>ASL Connect</h1>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel - Camera Feed -->
+            <div class="camera-panel">
+                <div class="camera-header">
+                    <span>Live Sign Input</span>
+                    <button class="camera-icon" id="cameraBtn" title="Toggle Camera">📷</button>
+                </div>
+                <div class="camera-container">
+                    <video id="webcam" autoplay playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div class="camera-overlay" id="cameraOverlay">
+                        <p>Click "Start Session" to begin</p>
+                    </div>
+                </div>
+                <div class="status-bar">
+                    <span id="statusText">Ready</span>
+                    <span id="confidenceText"></span>
+                </div>
+            </div>
+
+            <!-- Right Panel - Interpreted Signs -->
+            <div class="interpretation-panel">
+                <div class="glosses-section">
+                    <h2>Interpreted Sign Glosses</h2>
+                    <div class="glosses-display" id="glossesDisplay">
+                        <!-- Signs will appear here -->
+                    </div>
+                    <button class="clear-btn" id="clearBtn">Clear All</button>
+                </div>
+
+                <div class="sentence-section">
+                    <h2>Translated Sentence</h2>
+                    <div class="sentence-display" id="sentenceDisplay">
+                        <p id="sentenceText">Start signing to see translation...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <button class="session-btn" id="sessionBtn">
+                <span class="btn-icon">▶</span>
+                <span class="btn-text">Start Session</span>
+            </button>
+            <div class="language-selector">
+                <label>Language:</label>
+                <select id="languageSelect">
+                    <option value="english">English</option>
+                </select>
+            </div>
+            <button class="settings-btn" title="Settings">⚙️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
