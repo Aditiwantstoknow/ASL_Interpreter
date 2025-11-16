@@ -132,7 +132,7 @@ Output (29 classes)
 
 #### Accuracy & Loss Graphs
 
-![Training History](model/training_history.png)
+![Training History](training_history.png)
 
 **Key Observations:**
 1. **Fast Convergence**: Model reached 90% training accuracy within first epoch
